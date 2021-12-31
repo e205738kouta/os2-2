@@ -1,0 +1,22 @@
+\documentclass[a4paper,11pt]{jsarticle}
+
+\usepackage{here}
+\usepackage[dvipdfmx]{graphicx}
+
+\begin{document}
+
+学籍番号205738H　野村航太
+
+\textbf{考察}
+
+Bufferedの影響を測定するのに最も適切なファイルとbufferの大きさは，Bufferedである場合とそうでない場合の違いが明確に分かり，かつ実行が非現実的になるほど大きくならないように設定する．Bufferedでない時，ファイルサイズが1024000の場合で比較するのに十分な程度の実行時間がかかるためファイルサイズの最大をこの値に設定した．また，この範囲のファイルサイズにおいてBufferのサイズを，実行時間減少の効果が比較的わかりやすいかつサイズが大きすぎないという条件でBufferのサイズを1024に設定した．
+
+図\ref{fig1}より，Bufferedかそうでないかで実行時間には大きな差があり，さらにBufferedでない場合はwrite sizeに比例して実行時間がかかっていることがわかる．Bufferでない時に実行時間がwrite sizeに比例している理由はシステムコールの回数に依存するためであり，したがって線形なグラフになったと考えられる．
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{buffer_graph.pdf}
+\caption{Bufferdの影響}\label{fig1}
+\end{figure}
+
+\end{document}
